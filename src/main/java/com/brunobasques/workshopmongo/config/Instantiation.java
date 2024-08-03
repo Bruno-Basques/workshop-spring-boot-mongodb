@@ -58,5 +58,11 @@ public class Instantiation implements CommandLineRunner{
 				new AuthorDTO(bob));
 
 		postRepository.saveAll(Arrays.asList(post1, post2, post3));
+		
+		maria.getPosts().add(post1);
+		alex.getPosts().add(post2);
+		bob.getPosts().add(post3);
+		
+		userRepository.saveAll(Arrays.asList(maria, alex, bob));
 	}
 }
